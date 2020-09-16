@@ -1,8 +1,16 @@
 import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "./Stateprovider";
 
 function Subtotal() {
+	// Pull the basket from useStateValue
+	const [{ basket }, dispatch] = useStateValue();
+
+	// Calculate basket total
+
+	//const [{ price }, dispatch1] = useStateValue();
+
 	return (
 		<div className="subtotal">
 			<CurrencyFormat
@@ -10,7 +18,7 @@ function Subtotal() {
 					<>
 						<p>
 							{/* Part of the homework */}
-							Subtotal ({0} items): <strong>0</strong>
+							Subtotal ({basket?.length} items): <strong>0</strong>
 						</p>
 						<small className="subtotal__gift">
 							<input type="checkbox" /> This order contains a gift

@@ -9,6 +9,7 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				basket: [...state.basket, action.item],
+				// price: [...state.price, action.item],
 			};
 
 		default:
