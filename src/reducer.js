@@ -1,5 +1,6 @@
 export const initialState = {
 	basket: [],
+	user: null,
 };
 
 // selector to attain total in data layer
@@ -30,9 +31,19 @@ const reducer = (state, action) => {
 			}
 
 			return {
+				// Everything in state
 				...state,
 				basket: newBasket,
 			};
+
+		case "SET_USER":
+			return {
+				// Everything in state
+				...state,
+				// Update user
+				user: action.user,
+			};
+
 		default:
 			return state;
 	}
