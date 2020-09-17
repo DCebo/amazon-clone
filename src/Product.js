@@ -54,7 +54,7 @@ export function Product__Sale({
 	sale__price,
 	rating,
 }) {
-	const [{basket}, dispatch] = useStateValue();
+	const [{ basket }, dispatch] = useStateValue();
 
 	console.log("this is the basket >>> ", basket);
 
